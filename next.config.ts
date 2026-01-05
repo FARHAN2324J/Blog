@@ -1,7 +1,16 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  reactStrictMode: true,
+  images: {
+    domains: ["i.imgur.com"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "assets.example.com",
+      },
+    ],
+  },
 };
 
 export default nextConfig;
