@@ -25,4 +25,7 @@ body {
   .p {
     @apply text-sm sm:text-base text-(--text-gray) font-medium;
   }
+  .topic {
+    @apply text-(--primary-color) font-medium text-sm inline-block mt-3;
+  }
 }

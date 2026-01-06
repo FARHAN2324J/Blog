@@ -1,5 +1,5 @@
 "use client";
-import { supabase } from "@/api/supaBaseClient";
+import { supabase } from "@/lib/supaBaseClient";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
@@ -10,6 +10,7 @@ interface BlogPost {
   description: string;
   read_time: number;
   publish_date: string;
+  topic: string;
 }
 
 const Post = () => {
@@ -154,6 +155,7 @@ const Post = () => {
                 </div>
                 <h2 className="H2 my-1">{d.title}</h2>
                 <p className="p line-clamp-2 text-pretty">{d.description}</p>
+                <span className="topic">#{d.topic}</span>
               </div>
             </article>
           ))}
