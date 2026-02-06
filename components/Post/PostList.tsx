@@ -9,7 +9,7 @@ interface Props {
 
 export default function PostList({ posts }: Props) {
   return (
-    <section className="mt-30 mx-4 grid lg:grid-cols-1 md:grid-cols-2 grid-cols-1 gap-6">
+    <section className="my-10 mx-4 flex flex-col gap-6">
       {posts.map((post) => (
         <Post key={post.id} post={post} />
       ))}

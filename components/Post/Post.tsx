@@ -10,24 +10,31 @@ export default function Post({ post }: Props) {
   const dataBlur =
     "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAFCAYAAAB4ka1VAAAAsUlEQVR4AQClAFr/Au9tVv/vaVL/9ap6//rUm//2zp3/9cyQ//fPhf/xxaX/AgD7/AAA+fsA/ujzAP70+AADB/gABArzAAII8wABDesAAv8FDAAA/wAA/u72APrl+QD48w8A/v0WAAEAEgD+AwYAAvwbPAD9CRcA+PkWAOTmLQDk2iIA8OgeAPn1HwDy8hgAAvwdRAD6K18A7RFVAOTlLgDj1yAA3tAlANrPKQDk5BYAAAAA//8lqs1ZAAAABklEQVQDAMSzT6Owa/PuAAAAAElFTkSuQmCC";
   return (
-    <Link href={`/${post.id}`}>
-      <article
-        className="bg-(--secondary-color) w-[45%] flex lg:flex-row flex-col p-5 rounded-[36px] hover:scale-103 transition-transform duration-300 m-auto"
+    <article>
+      <Link
+        href={`/${post.id}`}
+        className="bg-(--secondary-color) w-[90%] sm:w-[85%] md:w-[90%] lg:w-[70%] xl:w-[60%] 2xl:w-[40%] flex md:flex-row flex-col p-5 md:p-4 rounded-[36px] md:rounded-3xl hover:scale-103 transition-transform duration-300 m-auto md:gap-4 md:items-center md:max-h-55            
+  "
         style={{
           transitionTimingFunction: "cubic-bezier(0.165, 0.285, 0.22, 2.25)",
         }}
       >
-        <div className="relative w-[320px] h-45">
+        <div className="relative shrink-0">
           <Image
             src={post.image}
             alt={post.title}
             className="bg-(--primary-color) rounded-3xl object-cover"
-            fill
+            width={320}
+            height={180}
             placeholder="blur"
             blurDataURL={dataBlur}
+            style={{
+              width: "300px",
+              height: "180px",
+            }}
           />
         </div>
-        <div className="lg:ml-5 lg:mt-0 mt-5 ">
+        <div className="lg:ml-5 lg:mt-0 mt-5">
           <div className="flex gap-2 items-center mb-2">
             <div className="flex items-center gap-1">
               <svg
@@ -110,7 +117,7 @@ export default function Post({ post }: Props) {
           <p className="p line-clamp-2 text-pretty">{post.description}</p>
           <span className="topic">#{post.topic}</span>
         </div>
-      </article>
-    </Link>
+      </Link>
+    </article>
   );
 }

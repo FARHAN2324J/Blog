@@ -1,7 +1,7 @@
 const PostLoading = () => {
   const array = new Array(3).fill(null);
   return (
-    <div className="mt-30 mx-4 grid lg:grid-cols-1 md:grid-cols-2 grid-cols-1 gap-6">
+    <div className="mt-10 mx-4 grid lg:grid-cols-1 md:grid-cols-2 grid-cols-1 gap-6">
       {array.map((_, i) => (
         <article
           className="bg-(--secondary-color) w-[40%] flex lg:flex-row flex-col p-5 rounded-[36px] m-auto animate-pulse"

@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useParams } from "next/navigation";
 
 const Notfound = () => {
@@ -14,19 +13,12 @@ const Notfound = () => {
           Page not found
         </h1>
         <p className="my-6 text-lg font-medium text-pretty text-(--text-gray) sm:text-xl/8">
-          There is no postal information with ID <span className="text-(--primary-color)">#{postId}</span>
+          There is no postal information with ID{" "}
+          <span className="text-(--primary-color)">#{postId}</span>
         </p>
-        <Link
-          href="/"
-          className="rounded-md bg-(--primary-color) px-3.5 py-2.5  text-sm font-semibold text-(--text-white)"
-        >
-          Go back home
-        </Link>
       </div>
     </main>
   );
 };
 
 export default Notfound;
-
-//
