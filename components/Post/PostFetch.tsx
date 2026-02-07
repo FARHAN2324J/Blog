@@ -18,5 +18,19 @@ export default async function PostFetch({
   if (error) {
     throw new Error("Failed to fetch blog posts");
   }
+
+  if (data.length === 0) {
+    return (
+      <div className="text-center py-16">
+        <h3 className="text-xl text-(--text-white) mb-2">
+          {searchQuery ? `No results for "${searchQuery}"` : "No posts yet"}
+        </h3>
+        <p className="text-(--text-gray)">
+          {searchQuery ? "Try different keywords" : "Check back later!"}
+        </p>
+      </div>
+    );
+  }
+
   return <PostList posts={data as PostProps[]} />;
 }
