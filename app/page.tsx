@@ -13,7 +13,7 @@ export default async function Home(props: {
   return (
     <div>
       <Hero />
-      <Search placeholder="Search blog posts..." />
+      <Search placeholder="Search posts..." />
       <Suspense key={query} fallback={<PostLoading />}>
         <PostFetch searchQuery={query} />
       </Suspense>
