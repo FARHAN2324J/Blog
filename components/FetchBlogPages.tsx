@@ -3,25 +3,21 @@ import { supabase } from "@/lib/supaBaseClient";
 const ITEMS_PER_PAGE = 2;
 
 export async function fetchBlogPages(query: string = ""): Promise<number> {
-  let countQuery = supabase
-    .from("blog")
-    .select("*", { count: "exact", head: true });
-
-  if (query) {
-    countQuery = countQuery.or(
-      `title.ilike.%${query}%,topic.ilike.%${query}%,description.ilike.%${query}%`,
-    );
+  if (query.trim()) {
+    return 0;
   }
 
-  const { count, error } = await countQuery;
+  try {
+    const { count } = await supabase
+      .from("blog")
+      .select("*", { count: "exact", head: true });
 
-  if (error) {
+    const totalItems = count || 0;
+    const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
+
+    return totalPages > 0 ? totalPages : 1;
+  } catch (error) {
     console.error("Error fetching total page count:", error);
-    throw new Error("Failed to fetch total page count.");
+    return 1;
   }
-
-  const totalItems = count || 0;
-  const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
-
-  return totalPages > 0 ? totalPages : 1;
 }
