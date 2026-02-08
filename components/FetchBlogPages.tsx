@@ -15,9 +15,9 @@ export async function fetchBlogPages(query: string = ""): Promise<number> {
     const totalItems = count || 0;
     const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
 
-    return totalPages > 0 ? totalPages : 1;
+    return totalPages > 1 ? totalPages : 0;
   } catch (error) {
     console.error("Error fetching total page count:", error);
-    return 1;
+    return 0;
   }
 }
