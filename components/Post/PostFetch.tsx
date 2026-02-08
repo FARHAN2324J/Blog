@@ -2,12 +2,18 @@ import { supabase } from "@/lib/supaBaseClient";
 import PostList from "./PostList";
 import { PostProps } from "@/types/post";
 
+const ITEMS_PER_PAGE = 2;
+
 export default async function PostFetch({
   searchQuery = "",
+  currentPage = 1,
 }: {
   searchQuery?: string;
+  currentPage: number;
 }) {
-  let query = supabase.from("blog").select("*");
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+  const endIndex = startIndex + ITEMS_PER_PAGE - 1;
+  let query = supabase.from("blog").select("*").range(startIndex, endIndex);
   if (searchQuery) {
     query = query.or(
       `title.ilike.%${searchQuery}%,topic.ilike.%${searchQuery}%,description.ilike.%${searchQuery}%`,
