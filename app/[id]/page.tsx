@@ -31,12 +31,12 @@ interface detailProps {
 
 const details = async ({ params }: detailProps) => {
   const { id } = await params;
-  const { data: post, error } = await supabase
+  const { data: post } = await supabase
     .from("blog")
     .select("*")
     .eq("id", id)
     .single<PostProps>();
-  if (error || !post) {
+  if (!post) {
     notFound();
   }
 
