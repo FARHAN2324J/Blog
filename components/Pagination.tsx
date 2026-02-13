@@ -21,7 +21,7 @@ export default function Pagination({ totalPages }: { totalPages: number }) {
           href={createPageURL(currentPage - 1)}
           className="text-(--text-gray) pl-1"
         >
-          Previous
+          Prev
         </Link>
       )}
 

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
+
 import "./globals.css";
 
 const geistSans = Geist({
@@ -12,6 +14,38 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const nuntioFont = localFont({
+  src: [
+    {
+      path: "./fonts/Nunito-Regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/Nunito-Medium.woff2",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "./fonts/Nunito-SemiBold.woff2",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "./fonts/Nunito-Bold.woff2",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "./fonts/Nunito-ExtraBold.woff2",
+      weight: "800",
+      style: "normal",
+    },
+  ],
+  variable: "--nuntio-font",
+  display: "swap",
+})
+
 export const metadata: Metadata = {
   title: {
     default: "Blog",
@@ -19,7 +53,6 @@ export const metadata: Metadata = {
   },
   description: "Hey, Welcome to my Blog!",
 };
-
 
 export default function RootLayout({
   children,
@@ -29,7 +62,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-(--background-color)`}
+        className={`${nuntioFont.variable} ${geistSans.variable} ${geistMono.variable} antialiased bg-(--background-color)`}
       >
         <main>{children}</main>
       </body>
