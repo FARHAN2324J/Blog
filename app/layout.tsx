@@ -62,7 +62,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${nuntioFont.variable} ${geistSans.variable} ${geistMono.variable} antialiased bg-(--background-color)`}
+        className={`${nuntioFont.className} ${geistSans.variable} ${geistMono.variable} antialiased bg-(--background-color)`}
       >
         <main>{children}</main>
       </body>
