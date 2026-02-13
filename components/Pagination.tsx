@@ -15,21 +15,21 @@ export default function Pagination({ totalPages }: { totalPages: number }) {
   };
 
   return (
-    <div className="flex items-center justify-center gap-2 mb-5">
-      {/* {currentPage > 1 && (
-        <Link 
+    <div className="flex items-center justify-center gap-5 mb-5 bg-(--secondary-color) py-2 px-2 rounded-full">
+      {currentPage > 1 && (
+        <Link
           href={createPageURL(currentPage - 1)}
-          className="flex h-10 px-4 items-center justify-center rounded-md border border-gray-300 bg-gray-100 text-gray-700 hover:bg-gray-200 transition-all duration-200"
+          className="text-(--text-gray) pl-1"
         >
           Previous
         </Link>
-      )} */}
+      )}
 
       {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => {
         const isActive = currentPage === page;
         const className = isActive
-          ? "flex h-10 w-10 items-center justify-center text-sm font-medium rounded-lg bg-(--primary-color) text-(--text-white) transition-all duration-200"
-          : "flex h-10 w-10 items-center justify-center text-sm font-medium rounded-lg text-(--text-light-gray) hover:bg-(--primary-color) border-2 border-(--primary-color) transition-all duration-200";
+          ? "flex h-10 w-10 items-center justify-center text-sm font-medium rounded-full bg-(--primary-color) text-(--text-white) transition-all duration-200"
+          : "text-sm font-medium text-(--text-white)";
 
         return isActive ? (
           <div key={page} className={className}>
@@ -41,15 +41,14 @@ export default function Pagination({ totalPages }: { totalPages: number }) {
           </Link>
         );
       })}
-      {/* 
       {currentPage < totalPages && (
-        <Link 
+        <Link
           href={createPageURL(currentPage + 1)}
-          className="flex h-10 px-4 items-center justify-center rounded-md border border-gray-300 bg-gray-100 text-gray-700 hover:bg-gray-200 transition-all duration-200"
+          className="text-(--text-gray) pr-1"
         >
           Next
         </Link>
-      )} */}
+      )}
     </div>
   );
 }
