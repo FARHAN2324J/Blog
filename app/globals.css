@@ -11,8 +11,12 @@ body {
   --secondary-color: #1e1f23;
   --background-color: #0e0e0e;
   --text-white: #ffffff;
+  --text-title: red;
   --text-gray: #b9bbbe;
   --text-light-gray: #8d8d8d;
+}
+.dark {
+  --text-title: blue;
 }
 
 @layer components {
@@ -20,7 +24,7 @@ body {
     @apply text-(--text-light-gray) text-xs sm:text-sm;
   }
   .H2 {
-    @apply text-lg sm:text-xl lg:text-2xl font-bold text-(--text-white);
+    @apply text-lg sm:text-xl lg:text-2xl font-bold dark:text-(--text-title) text-(--text-title);
   }
   .p {
     @apply text-sm sm:text-base text-(--text-gray) font-medium;

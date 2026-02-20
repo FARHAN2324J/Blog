@@ -116,6 +116,7 @@ export default function Post({ post }: Props) {
           <h2 className="H2 my-1">{post.title}</h2>
           <p className="p line-clamp-2 text-pretty">{post.description}</p>
           <span className="topic">#{post.topic}</span>
+          <span className="dark:text-amber-600 text-amber-100">test</span>
         </div>
       </Link>
     </article>
