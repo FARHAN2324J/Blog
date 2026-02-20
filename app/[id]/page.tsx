@@ -4,6 +4,9 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import ShareButtons from "@/components/ui/ShareButtons";
+import RecentPosts from "@/components/RecentPosts/RecentPosts";
+import { Suspense } from "react";
+import RecentPostsSkeleton from "@/components/RecentPosts/RecentPostsSkeleton";
 
 interface detailProps {
   params: Promise<{ id: string }>;
@@ -47,7 +50,7 @@ const details = async ({ params }: detailProps) => {
     notFound();
   }
 
-    const postUrl = `https://blog.vercel.app/${post.id}`;
+  const postUrl = `https://blog.vercel.app/${post.id}`;
   return (
     <article className="min-h-screen">
       <header className="relative">
@@ -133,10 +136,13 @@ const details = async ({ params }: detailProps) => {
               {post.content}
             </p>
           </div>
-           <div className="pt-6 flex items-center gap-2">
+          <div className="pt-6 flex items-center gap-2">
             <ShareButtons url={postUrl} title={post.title} />
           </div>
         </section>
+        <Suspense fallback={<RecentPostsSkeleton />}>
+          <RecentPosts currentPostId={post.id} />
+        </Suspense>
       </main>
     </article>
   );
