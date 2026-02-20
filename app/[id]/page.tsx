@@ -4,7 +4,6 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import ShareButtons from "@/components/ui/ShareButtons";
-import CopyLinkButton from "@/components/ui/CopyLinkButon";
 
 interface detailProps {
   params: Promise<{ id: string }>;
@@ -130,7 +129,6 @@ const details = async ({ params }: detailProps) => {
           </div>
            <div className="pt-6 flex items-center gap-2">
             <ShareButtons url={postUrl} title={post.title} />
-            <CopyLinkButton url={postUrl} />
           </div>
         </section>
       </main>
