@@ -2,32 +2,34 @@ import { supabase } from "@/lib/supaBaseClient";
 import { PostProps } from "@/types/post";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-// import { Metadata } from "next";
+import { Metadata } from "next";
+import ShareButtons from "@/components/ui/ShareButtons";
+import CopyLinkButton from "@/components/ui/CopyLinkButon";
 
 interface detailProps {
   params: Promise<{ id: string }>;
 }
 
-// metadata
-// export async function generateMetadata({
-//   params,
-// }: detailProps): Promise<Metadata> {
-//   const { id } = await params;
 
-//   const { data: post } = await supabase
-//     .from("blog")
-//     .select("title, description")
-//     .eq("id", id)
-//     .single();
+export async function generateMetadata({
+  params,
+}: detailProps): Promise<Metadata> {
+  const { id } = await params;
 
-//   return {
-//     title: {
-//       absolute: post?.title || `Post ${id}`,
-//     },
-//     description: post?.description || `Details of post ${id}`,
-//   };
+  const { data: post } = await supabase
+    .from("blog")
+    .select("title, description")
+    .eq("id", id)
+    .single();
 
-// }
+  return {
+    title: {
+      absolute: post?.title || `Post ${id}`,
+    },
+    description: post?.description || `Details of post ${id}`,
+  };
+
+}
 
 const details = async ({ params }: detailProps) => {
   const { id } = await params;
@@ -40,6 +42,7 @@ const details = async ({ params }: detailProps) => {
     notFound();
   }
 
+    const postUrl = `https://blog.vercel.app/${post.id}`;
   return (
     <article className="min-h-screen">
       <header className="relative">
@@ -124,6 +127,10 @@ const details = async ({ params }: detailProps) => {
             <p className="text-(--text-body) text-lg md:text-xl text-balance">
               {post.content}
             </p>
+          </div>
+           <div className="pt-6 flex items-center gap-2">
+            <ShareButtons url={postUrl} title={post.title} />
+            <CopyLinkButton url={postUrl} />
           </div>
         </section>
       </main>
