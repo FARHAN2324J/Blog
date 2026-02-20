@@ -64,7 +64,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${nuntioFont.className} ${geistSans.variable} ${geistMono.variable} antialiased bg-(--background-color)`}
+        className={`${nuntioFont.className} ${geistSans.variable} ${geistMono.variable} antialiased bg-(--bg-body)`}
       >
         <Providers>
           <nav>

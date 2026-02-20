@@ -116,12 +116,12 @@ const details = async ({ params }: detailProps) => {
       <main>
         <section className="lg:p-16 md:p-14 p-6 ">
           <header>
-            <h1 className="text-(--text-white) text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6">
+            <h1 className="text-(--text-title) text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6">
               {post.title}
             </h1>
           </header>
           <div className="">
-            <p className="text-(--text-gray) text-lg md:text-xl text-balance">
+            <p className="text-(--text-body) text-lg md:text-xl text-balance">
               {post.content}
             </p>
           </div>

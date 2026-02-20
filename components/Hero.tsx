@@ -2,9 +2,9 @@ const Hero = () => {
   return (
     <section className="h-50 relative overflow-hidden">
       <div className="relative z-10 flex justify-center items-center h-full">
-        <h1 className="lg:text-6xl md:text-5xl text-[28px] mx-6 leading-10 text-(--text-gray) text-center font-extrabold tracking-tight">
+        <h1 className="lg:text-6xl md:text-5xl text-[28px] mx-6 leading-10 text-(--text-hero) text-center font-extrabold tracking-tight">
           Welcome to my
-          <span className="text-(--primary-color) shadow-xl rounded-full font-extrabold relative inline-block px-4 sm:mt-0 mt-12 sm:ml-8 ml-0">
+          <span className="text-(--primary-color) rounded-full font-extrabold relative inline-block px-4 sm:mt-0 mt-12 sm:ml-8 ml-0">
             <div className="absolute -top-5 -left-4">
               <div className="relative">
                 <div className="absolute sm:-inset-2 -inset-0.5 bg-linear-to-br from-(--primary-color)/60 to-(--primary-color)/60 rounded-full blur-lg"></div>

@@ -36,7 +36,7 @@ export default function Search({ placeholder }: { placeholder: string }) {
           handleSearch(e.target.value);
         }}
         defaultValue={searchParams.get("query")?.toString()}
-        className="w-full h-11.25 pl-10 pr-3 border-0 rounded-full bg-(--secondary-color) outline-none text-(--text-gray) z-0 placeholder:text-(--text-light-gray) hover:shadow-[0_0_0_2.5px_#2f303d,0px_0px_25px_-15px_#000] shadow-[0_0_0_1.5px_#2b2c37,0_0_25px_-17px_#000] active:scale-95 focus:shadow-[0_0_0_2.5px_#636cef]"
+        className="w-full h-11.25 pl-10 pr-3 border-0 rounded-full bg-(--bg-card) outline-none text-(--text-body) z-0 placeholder:text-(--text-light-gray) hover:shadow-[0_0_0_2.5px_#2f303d,0px_0px_25px_-15px_#000] shadow-[0_0_0_1.5px_#2b2c37,0_0_25px_-17px_#000] active:scale-95 focus:shadow-[0_0_0_2.5px_#636cef]"
         style={{
           transition: "all 0.25s cubic-bezier(0.165, 0.285, 0.12, 2.25)",
         }}

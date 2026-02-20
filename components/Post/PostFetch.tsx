@@ -33,10 +33,10 @@ export default async function PostFetch({
   if (!data || data.length === 0) {
     return (
       <div className="text-center py-16">
-        <h3 className="text-xl text-(--text-white) mb-2">
+        <h3 className="text-xl text-(--text-title) mb-2">
           {searchQuery ? `No results for "${searchQuery}"` : "No posts yet"}
         </h3>
-        <p className="text-(--text-gray)">
+        <p className="text-(--text-body)">
           {searchQuery ? "Try different keywords" : "Check back later!"}
         </p>
       </div>

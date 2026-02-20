@@ -13,7 +13,7 @@ export default function Post({ post }: Props) {
     <article>
       <Link
         href={`/${post.id}`}
-        className="bg-(--secondary-color) w-[90%] sm:w-[85%] md:w-[90%] lg:w-[70%] xl:w-[60%] 2xl:w-[40%] flex md:flex-row flex-col p-5 md:p-4 rounded-[36px] md:rounded-3xl hover:scale-103 transition-transform duration-300 m-auto md:gap-4 md:items-center md:max-h-55            
+        className="bg-(--bg-card) w-[90%] sm:w-[85%] md:w-[90%] lg:w-[70%] xl:w-[60%] 2xl:w-[40%] flex md:flex-row flex-col p-5 md:p-4 rounded-[36px] md:rounded-3xl hover:scale-103 transition-transform duration-300 m-auto md:gap-4 md:items-center md:max-h-55            
   "
         style={{
           transitionTimingFunction: "cubic-bezier(0.165, 0.285, 0.22, 2.25)",
