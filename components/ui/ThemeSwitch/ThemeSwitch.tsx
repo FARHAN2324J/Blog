@@ -13,7 +13,7 @@ export default function ThemeSwitch() {
     }, [])
 
     if (!mounted) return (
-        <div className="w-16 h-8 bg-gray-300 dark:bg-gray-700 rounded-full animate-pulse"></div>
+        <div className="w-16 h-8 bg-(--text-light-gray) dark:(--secondary-color) rounded-full animate-pulse m-4"></div>
     )
 
     const isDark = resolvedTheme === 'light'
