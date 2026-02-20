@@ -17,7 +17,7 @@ export async function generateMetadata({
 
   const { data: post } = await supabase
     .from("blog")
-    .select("title, description")
+    .select("*")
     .eq("id", id)
     .single();
 
@@ -26,6 +26,12 @@ export async function generateMetadata({
       absolute: post?.title || `Post ${id}`,
     },
     description: post?.description || `Details of post ${id}`,
+    openGraph: {
+      title: post?.title,
+      description: post?.description,
+      images: post?.image ? [{ url: post.image }] : [],
+      type: 'article',
+    },
   };
 
 }
