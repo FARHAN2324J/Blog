@@ -1,4 +1,4 @@
-import { supabase } from "@/lib/supaBaseClient";
+import { supabase } from "../lib/supaBaseClient";
 
 const ITEMS_PER_PAGE = 2;
 

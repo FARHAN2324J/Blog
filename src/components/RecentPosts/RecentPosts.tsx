@@ -1,6 +1,6 @@
-import { supabase } from "@/lib/supaBaseClient";
 import Link from "next/link";
 import Image from "next/image";
+import { supabase } from "@/src/lib/supaBaseClient";
 
 export default async function RecentPosts({ currentPostId }: { currentPostId: string | number }) {
     const { data: recentPosts } = await supabase
