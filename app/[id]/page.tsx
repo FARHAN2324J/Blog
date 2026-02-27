@@ -12,6 +12,19 @@ interface detailProps {
   params: Promise<{ id: string }>;
 }
 
+export async function generateStaticParams() {
+  const { data: posts } = await supabase
+    .from("blog")
+    .select("id")
+
+  if (!posts) return []
+
+  return posts.map((post) => ({
+    id: post.id.toString(),
+  }))
+}
+
+
 
 export async function generateMetadata({
   params,
@@ -50,7 +63,7 @@ const details = async ({ params }: detailProps) => {
     notFound();
   }
 
-  const postUrl = `https://blog.vercel.app/${post.id}`;
+  const postUrl = `https://blog-farhan.vercel.app/${post.id}`;
   return (
     <article className="min-h-screen">
       <header className="relative">
