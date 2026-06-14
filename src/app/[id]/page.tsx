@@ -148,7 +148,7 @@ const details = async ({ params }: detailProps) => {
             </h1>
           </header>
           <div className="">
-            <p className="text-(--text-body) text-lg md:text-xl text-balance">
+            <p className="text-(--text-body) text-lg md:text-xl text-balance whitespace-pre-wrap">
               {post.content}
             </p>
           </div>
