@@ -1,3 +1,6 @@
+export const dynamic = 'force-dynamic'; // This line eliminates the cache
+
+
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
