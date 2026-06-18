@@ -1,6 +1,3 @@
-export const dynamic = 'force-dynamic'; // This line eliminates the cache
-
-
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
@@ -70,7 +67,7 @@ const details = async ({ params }: detailProps) => {
   return (
     <article className="min-h-screen">
       <header className="relative">
-        <figure className="relative w-full h-60 sm:h-80 md:h-96 lg:h-100">
+        <figure className="relative w-full h-60 sm:h-80 md:h-96 lg:h-120">
           <Image
             src={post.image}
             alt={post.title}
