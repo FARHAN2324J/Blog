@@ -24,11 +24,13 @@ export default async function RecentPosts({ currentPostId }: { currentPostId: st
                         key={post.id}
                         className="group block w-full"
                     >
-                        <div className="bg-(--bg-card) rounded-3xl overflow-hidden transition-transform duration-300 p-3 h-full hover:scale-103"
+                       
+                        <div className="flex flex-col bg-(--bg-card) rounded-3xl overflow-hidden transition-transform duration-300 p-3 h-full hover:scale-103"
                             style={{
                                 transitionTimingFunction: "cubic-bezier(0.165, 0.285, 0.22, 2.25)",
                             }}>
-                            <div className="relative h-48 w-full">
+                            
+                            <div className="relative h-48 w-full shrink-0">
                                 <Image
                                     src={post.image}
                                     alt={post.title}
@@ -37,16 +39,19 @@ export default async function RecentPosts({ currentPostId }: { currentPostId: st
                                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                                 />
                             </div>
-                            <div className="p-3 flex flex-col">
+                            
+                          
+                            <div className="p-3 flex flex-col justify-between flex-1">
                                 <h3 className="text-(--text-title) font-medium line-clamp-2 group-hover:text-(--primary-color) transition-colors text-base md:text-lg">
                                     {post.title}
                                 </h3>
-                                <div className="flex items-center gap-2 mt-auto text-xs text-(--text-light-gray)">
+                                <div className="flex items-center gap-2 mt-3 text-xs text-(--text-light-gray)">
                                     <span>{post.publish_date}</span>
                                     <span>•</span>
                                     <span>{post.read_time} min</span>
                                 </div>
                             </div>
+
                         </div>
                     </Link>
                 ))}
