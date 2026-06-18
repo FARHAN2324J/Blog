@@ -37,7 +37,7 @@ export default async function RecentPosts({ currentPostId }: { currentPostId: st
                                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                                 />
                             </div>
-                            <div className="p-3 flex flex-col justify-between">
+                            <div className="p-3 flex flex-col justify-between h-full">
                                 <h3 className="text-(--text-title) font-medium line-clamp-2 group-hover:text-(--primary-color) transition-colors text-base md:text-lg">
                                     {post.title}
                                 </h3>
