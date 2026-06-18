@@ -4,7 +4,7 @@ export default function RecentPostsSkeleton() {
             <h2 className="text-(--text-title) text-2xl font-bold mb-6">
                 Latest posts
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl">
                 {[1, 2, 3].map((i) => (
                     <div key={i} className="bg-(--bg-card) rounded-3xl p-3 animate-pulse">
                         <div className="h-40 w-full bg-(--text-body)  rounded-2xl mb-3"></div>
