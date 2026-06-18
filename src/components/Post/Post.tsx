@@ -79,7 +79,7 @@ export default function Post({ post }: Props) {
                 {post.publish_date}
               </time>
             </div>
-            <span className="text-(--text-gray)">•</span>
+            <span className="text-[#8d8d8d]">•</span>
             <div className="flex items-center gap-1">
               <svg
                 width="20px"
@@ -115,7 +115,7 @@ export default function Post({ post }: Props) {
           </div>
           <h2 className="H2 my-1">{post.title}</h2>
           <p className="p line-clamp-2 text-pretty">{post.description}</p>
-          <span className="topic">#{post.topic}</span>
+          {/* <span className="topic">#{post.topic}</span> */}
         </div>
       </Link>
     </article>
