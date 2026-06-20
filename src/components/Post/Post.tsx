@@ -7,8 +7,6 @@ interface Props {
 }
 
 export default function Post({ post }: Props) {
-  const dataBlur =
-    "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAFCAYAAAB4ka1VAAAAsUlEQVR4AQClAFr/Au9tVv/vaVL/9ap6//rUm//2zp3/9cyQ//fPhf/xxaX/AgD7/AAA+fsA/ujzAP70+AADB/gABArzAAII8wABDesAAv8FDAAA/wAA/u72APrl+QD48w8A/v0WAAEAEgD+AwYAAvwbPAD9CRcA+PkWAOTmLQDk2iIA8OgeAPn1HwDy8hgAAvwdRAD6K18A7RFVAOTlLgDj1yAA3tAlANrPKQDk5BYAAAAA//8lqs1ZAAAABklEQVQDAMSzT6Owa/PuAAAAAElFTkSuQmCC";
   return (
     <article>
       <Link
@@ -26,8 +24,6 @@ export default function Post({ post }: Props) {
             className="bg-(--primary-color) rounded-2xl object-cover"
             width={320}
             height={180}
-            placeholder="blur"
-            blurDataURL={dataBlur}
             style={{
               width: "300px",
               height: "180px",
