@@ -30,7 +30,6 @@ A modern blog application built with **Next.js**, **TypeScript**, **Tailwind CSS
 | [next-themes](https://github.com/pacocoursey/next-themes) | Dark/light mode management |
 | [next-share](https://github.com/socialshares/next-share) | Social share buttons |
 | [use-debounce](https://github.com/xnimorz/use-debounce) | Debouncing search input |
-| [plaiceholder](https://plaiceholder.co/) + [sharp](https://sharp.pixelplumbing.com/) | Image placeholders and optimization |
 | [react-loading-skeleton](https://github.com/dvtng/react-loading-skeleton) | Loading skeletons |
 
 ---
