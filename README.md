@@ -15,7 +15,6 @@ A modern blog application built with **Next.js**, **TypeScript**, **Tailwind CSS
 - 🌗 Dark / Light mode switch
 - 🔗 Social media share buttons for posts
 - 🕒 "Recent Posts" section
-- 🖼️ Image optimization and placeholders
 - ⚠️ Custom error and not-found pages
 
 ---
