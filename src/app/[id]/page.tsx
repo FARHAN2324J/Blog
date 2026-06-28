@@ -7,6 +7,7 @@ import ShareButtons from "@/src/components/ui/ShareButtons";
 import { PostProps } from "@/src/types/post";
 import RecentPostsSkeleton from "@/src/components/RecentPosts/RecentPostsSkeleton";
 import RecentPosts from "@/src/components/RecentPosts/RecentPosts";
+import ReactMarkdown from "react-markdown";
 
 interface detailProps {
   params: Promise<{ id: string }>;
@@ -146,7 +147,7 @@ const details = async ({ params }: detailProps) => {
           </header>
           <div className="">
             <p className="text-(--text-body) text-lg md:text-xl text-balance whitespace-pre-wrap">
-              {post.content}
+              <ReactMarkdown>{post.content}</ReactMarkdown>
             </p>
           </div>
           <div className="pt-6 flex items-center gap-2">
