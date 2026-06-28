@@ -2,7 +2,7 @@ import { supabase } from "@/src/lib/supaBaseClient";
 import PostList from "./PostList";
 import { PostProps } from "@/src/types/post";
 
-const ITEMS_PER_PAGE = 2;
+const ITEMS_PER_PAGE = 3;
 
 export default async function PostFetch({
   searchQuery = "",
