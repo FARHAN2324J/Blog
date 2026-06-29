@@ -8,7 +8,6 @@ import { PostProps } from "@/src/types/post";
 import RecentPostsSkeleton from "@/src/components/RecentPosts/RecentPostsSkeleton";
 import RecentPosts from "@/src/components/RecentPosts/RecentPosts";
 import ReactMarkdown from "react-markdown";
-
 interface detailProps {
   params: Promise<{ id: string }>;
 }
