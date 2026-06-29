@@ -68,7 +68,7 @@ const details = async ({ params }: detailProps) => {
   return (
     <article className="min-h-screen">
       <header className="relative">
-        <figure className="relative h-60 overflow-hidden rounded-3xl sm:h-80 md:h-96 lg:h-120">
+        <figure className="relative h-[60vh] md:h-[70vh] overflow-hidden">
           <Image
             src={post.image}
             alt={post.title}
