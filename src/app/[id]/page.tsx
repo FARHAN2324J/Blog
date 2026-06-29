@@ -144,11 +144,9 @@ const details = async ({ params }: detailProps) => {
               {post.title}
             </h1>
           </header>
-          <div className="">
-            <p className="text-(--text-body) text-lg md:text-xl text-balance whitespace-pre-wrap">
-              <ReactMarkdown>{post.content}</ReactMarkdown>
-            </p>
-          </div>
+          <p className="text-(--text-body) text-lg md:text-xl text-balance whitespace-pre-wrap">
+            <ReactMarkdown>{post.content}</ReactMarkdown>
+          </p>
           <div className="pt-6 flex items-center gap-2">
             <ShareButtons url={postUrl} title={post.title} />
           </div>
