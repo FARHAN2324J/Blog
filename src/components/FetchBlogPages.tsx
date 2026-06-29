@@ -1,6 +1,6 @@
 import { supabase } from "../lib/supaBaseClient";
 
-const ITEMS_PER_PAGE = 2;
+const ITEMS_PER_PAGE = 3;
 
 export async function fetchBlogPages(query: string = ""): Promise<number> {
   if (query.trim()) {

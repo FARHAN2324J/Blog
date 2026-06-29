@@ -68,12 +68,12 @@ const details = async ({ params }: detailProps) => {
   return (
     <article className="min-h-screen">
       <header className="relative">
-        <figure className="relative w-full h-60 sm:h-80 md:h-96 lg:h-120">
+        <figure className="relative h-60 overflow-hidden rounded-3xl sm:h-80 md:h-96 lg:h-120">
           <Image
             src={post.image}
             alt={post.title}
             fill
-            className="object-cover brightness-[0.65]"
+            className="object-cover"
             sizes="100vw"
             priority
           />
