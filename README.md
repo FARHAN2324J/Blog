@@ -31,7 +31,6 @@ A modern blog application built with **Next.js**, **TypeScript**, **Tailwind CSS
 | [next-share](https://github.com/socialshares/next-share) | Social share buttons |
 | [use-debounce](https://github.com/xnimorz/use-debounce) | Debouncing search input |
 
-
 ---
 
 ## 🚀 Getting Started
